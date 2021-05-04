@@ -28,4 +28,8 @@ module.exports = class Hotel {
   get taxaFds() {
     return this.#taxaFds
   }
+
+  valorDiaria(tipoCliente, diaSemana) {
+    return (diaSemana === 0 || diaSemana === 6) ? this.#taxaFds[tipoCliente] : this.#taxaSemana[tipoCliente]
+  }
 }
