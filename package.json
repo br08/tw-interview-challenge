@@ -1,10 +1,22 @@
 {
-  "name": "js-test-project",
+  "name": "hotelaria",
   "version": "1.0.0",
-  "description": "A simple project with a single failing test",
+  "description": "",
+  "main": "app.js",
   "scripts": {
+    "start": "app.js",
     "test": "mocha test/**/*spec.js"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/br08/hotelaria.git"
+  },
+  "author": "Brayan Neves",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/brunopsabino/hotelaria/issues"
+  },
+  "homepage": "https://github.com/brunopsabino/hotel-california#readme",
   "dependencies": {
     "chai": "^4.1.2",
     "mocha": "^4.0.1"
