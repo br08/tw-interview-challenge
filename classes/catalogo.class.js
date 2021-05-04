@@ -36,7 +36,7 @@ module.exports = class Catalogo {
     this.#hoteis.forEach(hotel => {
       let valorTotal = 0
       queryData.dias.forEach(dia => {
-        valorTotal += (dia.getDay() === 0 || dia.getDay() === 6) ? hotel.taxaFds[queryData.tipoCliente] : hotel.taxaSemana[queryData.tipoCliente]
+        valorTotal += hotel.valorDiaria(queryData.tipoCliente, dia.getDay())
       })
       aux.push({hotel: hotel.nome, classificacao: hotel.classificacao, valorTotal: valorTotal})
     })
