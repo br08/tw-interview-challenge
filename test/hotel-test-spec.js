@@ -1,6 +1,31 @@
 const chai = require('chai')
 const expect = chai.expect
 const Catalogo = require('../classes/catalogo.class')
+const Hotel = require('../classes/hotel.class')
+
+describe('Valida o valor da diária de um hotel.', () => {
+  const hotel = new Hotel('Mar Atlântico', 5, 220, 100, 150, 40);
+  const regularSemana = hotel.diaria.valor('regular', 3)
+  const regularFds = hotel.diaria.valor('regular', 0)
+  const fidelidadeSemana = hotel.diaria.valor('fidelidade', 2)
+  const fidelidadeFds = hotel.diaria.valor('fidelidade', 6)
+
+  it('Retorna valor semana regular', () => {
+    expect(regularSemana).to.equal(220)
+  })
+
+  it('Retorna valor semana fidelidade', () => {
+    expect(fidelidadeSemana).to.equal(100)
+  })
+
+  it('Retorna valor fds regular', () => {
+    expect(regularFds).to.equal(150)
+  })
+
+  it('Retorna valor fds fidelidade', () => {
+    expect(fidelidadeFds).to.equal(40)
+  })
+})
 
 describe('Valida a entrada fornecida pelo usuário.', () => {
   const catalogo = new Catalogo()
