@@ -2,6 +2,20 @@ const chai = require('chai')
 const expect = chai.expect
 const Catalogo = require('../classes/catalogo.class')
 
+describe('Valida a entrada fornecida pelo usuário.', () => {
+  const catalogo = new Catalogo()
+  const input = catalogo.formatInput('Regular: 16Mar2020(mon), 17Mar2020(tues), 18Mar2020(wed)')
+  const expectedDays = [new Date('17Mar2020(tues)'), new Date('16Mar2020(mon)'), new Date('18Mar2020(wed)')]
+
+  it('Deve retornar o tipo correto do cliente.', () => {
+    expect(input.tipoCliente).to.equals('regular')
+  })
+
+  it('Deve retornar o array de datas correto.', () => {
+    expect(JSON.stringify(input.dias.sort()) === JSON.stringify(expectedDays.sort())).to.equals(true)
+  })
+})
+
 describe('Retorna o hotel mais barato.', () => {
   const catalogo = new Catalogo()
   
