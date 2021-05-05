@@ -3,14 +3,12 @@ const Diaria = require('./diaria.class')
 module.exports = class Hotel {
   #nome
   #classificacao
-  #diariaSemana
-  #diariaFds
+  #diaria
 
-  constructor(nome, classificacao, diariaSemana, diariaFds) {
+  constructor(nome, classificacao, diariaSemanaReg, diariaSemanaFid, diariaFdsReg, diariaFdsFid) {
     this.#nome = nome
     this.#classificacao = classificacao
-    this.#diariaSemana = diariaSemana
-    this.#diariaFds = diariaFds
+    this.#diaria = new Diaria(diariaSemanaReg, diariaSemanaFid, diariaFdsReg, diariaFdsFid)
   }
 
   get nome() {
@@ -21,15 +19,7 @@ module.exports = class Hotel {
     return this.#classificacao
   }
 
-  get diariaSemana() {
-    return this.#diariaSemana
-  }
-
-  get diariaFds() {
-    return this.#diariaFds
-  }
-
-  valorDiaria(tipoCliente, diaSemana) {
-    return (diaSemana === 0 || diaSemana === 6) ? this.#diariaFds[tipoCliente] : this.#diariaSemana[tipoCliente]
+  get diaria() {
+    return this.#diaria
   }
 }

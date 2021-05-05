@@ -12,8 +12,8 @@ module.exports = class Catalogo {
     return this.#hoteis
   }
   
-  add(nome, classificacao, diariaSemanaReg, diariaFdsReg, diariaSemanaFid, diariaFdsFid) {
-    const hotel = new Hotel(nome, classificacao, new Diaria(diariaSemanaReg, diariaFdsReg), new Diaria(diariaSemanaFid, diariaFdsFid))
+  add(nome, classificacao, diariaSemanaReg, diariaSemanaFid, diariaFdsReg, diariaFdsFid) {
+    const hotel = new Hotel(nome, classificacao, diariaSemanaReg, diariaSemanaFid, diariaFdsReg, diariaFdsFid)
     this.#hoteis.push(hotel)
   }
 
@@ -36,7 +36,7 @@ module.exports = class Catalogo {
     this.#hoteis.forEach(hotel => {
       let valorTotal = 0
       queryData.dias.forEach(dia => {
-        valorTotal += hotel.valorDiaria(queryData.tipoCliente, dia.getDay())
+        valorTotal += hotel.diaria.valor(queryData.tipoCliente, dia.getDay())
       })
       aux.push({hotel: hotel.nome, classificacao: hotel.classificacao, valorTotal: valorTotal})
     })

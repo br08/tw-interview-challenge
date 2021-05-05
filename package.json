@@ -14,9 +14,9 @@
   "author": "Brayan Neves",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/brunopsabino/hotelaria/issues"
+    "url": "https://github.com/br08/hotelaria/issues"
   },
-  "homepage": "https://github.com/brunopsabino/hotel-california#readme",
+  "homepage": "https://github.com/br08/hotel-california#readme",
   "dependencies": {
     "chai": "^4.1.2",
     "mocha": "^4.0.1"
