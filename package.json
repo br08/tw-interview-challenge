@@ -16,7 +16,7 @@
   "bugs": {
     "url": "https://github.com/br08/hotelaria/issues"
   },
-  "homepage": "https://github.com/br08/hotel-california#readme",
+  "homepage": "https://github.com/br08/hotelaria#readme",
   "dependencies": {
     "chai": "^4.1.2",
     "mocha": "^4.0.1"
