@@ -1,17 +1,27 @@
 module.exports = class Diaria {
-  #regular
-  #fidelidade
+  #semana
+  #fds
 
-  constructor(regular, fidelidade) {
-    this.#regular = regular
-    this.#fidelidade = fidelidade
+  constructor(semanaReg, semanaFid, fdsReg, fdsFid) {
+    this.#semana = {
+      regular: semanaReg,
+      fidelidade: semanaFid
+    }
+    this.#fds = {
+      regular: fdsReg,
+      fidelidade: fdsFid
+    }
   }
 
-  get regular() {
-    return this.#regular
+  get semana() {
+    return this.#semana
   }
 
-  get fidelidade() {
-    return this.#fidelidade
+  get fds() {
+    return this.#fds
+  }
+
+  valor(tipoCliente, diaSemana) {
+    return (diaSemana === 0 || diaSemana === 6) ? this.#fds[tipoCliente] : this.#semana[tipoCliente]
   }
 }
