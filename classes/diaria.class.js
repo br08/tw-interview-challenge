@@ -1,4 +1,4 @@
-module.exports = class Taxa {
+module.exports = class Diaria {
   #regular
   #fidelidade
 

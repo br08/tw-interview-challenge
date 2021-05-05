@@ -1,5 +1,5 @@
 const Hotel = require('./hotel.class')
-const Taxa = require('./taxa.class')
+const Diaria = require('./diaria.class')
 
 module.exports = class Catalogo {
   #hoteis
@@ -12,8 +12,8 @@ module.exports = class Catalogo {
     return this.#hoteis
   }
   
-  add(nome, classificacao, txSemanaReg, txFdsReg, txSemanaFid, txFdsFid) {
-    const hotel = new Hotel(nome, classificacao, new Taxa(txSemanaReg, txFdsReg), new Taxa(txSemanaFid, txFdsFid))
+  add(nome, classificacao, diariaSemanaReg, diariaFdsReg, diariaSemanaFid, diariaFdsFid) {
+    const hotel = new Hotel(nome, classificacao, new Diaria(diariaSemanaReg, diariaFdsReg), new Diaria(diariaSemanaFid, diariaFdsFid))
     this.#hoteis.push(hotel)
   }
 

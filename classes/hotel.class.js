@@ -1,16 +1,16 @@
-const Taxa = require('./taxa.class')
+const Diaria = require('./diaria.class')
 
 module.exports = class Hotel {
   #nome
   #classificacao
-  #taxaSemana
-  #taxaFds
+  #diariaSemana
+  #diariaFds
 
-  constructor(nome, classificacao, taxaSemana, taxaFds) {
+  constructor(nome, classificacao, diariaSemana, diariaFds) {
     this.#nome = nome
     this.#classificacao = classificacao
-    this.#taxaSemana = taxaSemana
-    this.#taxaFds = taxaFds
+    this.#diariaSemana = diariaSemana
+    this.#diariaFds = diariaFds
   }
 
   get nome() {
@@ -21,15 +21,15 @@ module.exports = class Hotel {
     return this.#classificacao
   }
 
-  get taxaSemana() {
-    return this.#taxaSemana
+  get diariaSemana() {
+    return this.#diariaSemana
   }
 
-  get taxaFds() {
-    return this.#taxaFds
+  get diariaFds() {
+    return this.#diariaFds
   }
 
   valorDiaria(tipoCliente, diaSemana) {
-    return (diaSemana === 0 || diaSemana === 6) ? this.#taxaFds[tipoCliente] : this.#taxaSemana[tipoCliente]
+    return (diaSemana === 0 || diaSemana === 6) ? this.#diariaFds[tipoCliente] : this.#diariaSemana[tipoCliente]
   }
 }
