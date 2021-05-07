@@ -1,14 +1,14 @@
-const Diaria = require('./diaria.class')
+const TabelaPrecos = require('./tabela-precos.class')
 
 module.exports = class Hotel {
   #nome
   #classificacao
-  #diaria
+  #tabelaPrecos
 
-  constructor(nome, classificacao, diariaSemanaReg, diariaSemanaFid, diariaFdsReg, diariaFdsFid) {
+  constructor(nome, classificacao, semanaReg, semanaFid, fdsReg, fdsFid) {
     this.#nome = nome
     this.#classificacao = classificacao
-    this.#diaria = new Diaria(diariaSemanaReg, diariaSemanaFid, diariaFdsReg, diariaFdsFid)
+    this.#tabelaPrecos = new TabelaPrecos(semanaReg, semanaFid, fdsReg, fdsFid)
   }
 
   get nome() {
@@ -19,7 +19,7 @@ module.exports = class Hotel {
     return this.#classificacao
   }
 
-  get diaria() {
-    return this.#diaria
+  getDiaria(tipoCliente, diaSemana) {
+    return this.#tabelaPrecos.getValorDiaria(tipoCliente, diaSemana)
   }
 }
