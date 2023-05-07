@@ -1,4 +1,3 @@
-const { describe, it } = require('mocha');
 const { expect } = require('chai');
 
 const Catalogo = require('../classes/catalogo.js');
