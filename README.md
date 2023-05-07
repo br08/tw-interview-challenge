@@ -1,4 +1,4 @@
-Challenge proposed by TW tech interview process.
+Challenge proposed by TW in their tech interview process.
 ===
 
 To install the required modules:
