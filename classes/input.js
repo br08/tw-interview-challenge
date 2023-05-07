@@ -10,7 +10,7 @@ class Input {
   }
 
   format() {
-    const arr = this.#text.split(': ')
+    const arr = this.#text.split(': ');
     const tipoCliente = arr[0].toLowerCase();
 
     const dias = [];
