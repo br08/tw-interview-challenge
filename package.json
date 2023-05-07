@@ -1,34 +1,23 @@
 {
   "name": "hotelaria",
-  "version": "2.0.0",
+  "version": "1.0.0",
   "description": "",
+  "author": "Alonso Brayan N. Mendonça",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/br08/estudo-tdd/issues"
+  },
+  "homepage": "https://github.com/br08/estudo-tdd#readme",
   "main": "app.js",
   "scripts": {
-    "start": "app.js",
     "test": "mocha test/**/*spec.js"
   },
-  "type": "module",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/br08/hotelaria.git"
+    "url": "git+https://github.com/br08/estudo-tdd.git"
   },
-  "author": "Brayan Neves",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/br08/hotelaria/issues"
-  },
-  "homepage": "https://github.com/br08/hotelaria#readme",
   "dependencies": {
     "chai": "^4.3.4",
     "mocha": "^8.4.0"
-  },
-  "devDependencies": {
-    "@babel/core": "^7.14.2",
-    "@babel/eslint-parser": "^7.14.2",
-    "@babel/eslint-plugin": "^7.13.16",
-    "@babel/preset-env": "^7.14.2",
-    "eslint": "^7.26.0",
-    "eslint-config-airbnb": "^18.2.1",
-    "eslint-plugin-import": "^2.22.1"
   }
 }

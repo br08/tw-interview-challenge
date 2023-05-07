@@ -1,17 +1,15 @@
-const chai = require('chai')
-const expect = chai.expect
+const { describe, it } = require('mocha');
+const { expect } = require('chai');
 
-const Catalogo = require('../classes/catalogo.class')
-const Input = require('../classes/input.class')
-const TabelaPrecos = require('../classes/tabela-precos.class')
-const Hotel = require('../classes/hotel.class')
+const Catalogo = require('../classes/catalogo.js');
+const Input = require('../classes/input.js');
+const TabelaPrecos = require('../classes/tabela-precos.js');
+const Hotel = require('../classes/hotel.js');
 
-describe ('Valida a entrada fornacida pelo usuário.', () => {
-  const input = new Input()
-  
-  it('Valida o tipo do cliente corrto.', () => {
-    const entrada = 'Regular: 16Mar2020(mon), 17Mar2020(tues), 18Mar2020(wed)'
-    const {tipoCliente} = input.format(entrada)
+describe('Valida a entrada fornacida pelo usuário.', () => {
+  it('Valida o tipo do cliente correto.', () => {
+    const input = new Input('Regular: 16Mar2020(mon), 17Mar2020(tues), 18Mar2020(wed)')
+    const { tipoCliente } = input.format()
     expect(tipoCliente).to.equals('regular')
   })
 
