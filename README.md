@@ -1,4 +1,4 @@
-Estudo de TDD com módulos ES6.
+Challenge proposed by TW tech interview process.
 ===
 
 To install the required modules:
